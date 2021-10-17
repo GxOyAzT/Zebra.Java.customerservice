@@ -105,7 +105,7 @@ public class ValidateCustomerCommandTests {
         assertThat(result.isValid()).isFalse();
         assertThat(result.getMessages().size()).isEqualTo(1);
         assertThat(result.getMessages().get(0).getPropertyName()).isEqualTo("fullName");
-        assertThat(result.getMessages().get(0).getValidationInfo()).isEqualTo("Full name cannot be longer then 100 characters.");
+        assertThat(result.getMessages().get(0).getValidationInfo()).isEqualTo("Full name cannot be empty.");
     }
 
     @Test

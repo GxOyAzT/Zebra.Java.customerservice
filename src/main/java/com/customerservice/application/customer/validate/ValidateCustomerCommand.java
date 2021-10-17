@@ -18,12 +18,13 @@ public class ValidateCustomerCommand implements IValidateCustomerCommand{
                     "Full name cannot be empty."
             );
         }
-
-        if (customer.getFullName().length() > 100) {
-            validationResultModel.addValidateMessage(
-                    "fullName",
-                    "Full name cannot be longer then 100 characters."
-            );
+        else {
+            if (customer.getFullName().length() > 100) {
+                validationResultModel.addValidateMessage(
+                        "fullName",
+                        "Full name cannot be longer then 100 characters."
+                );
+            }
         }
 
         if (customer.getGender() == GenderEnum.Undefined) {
