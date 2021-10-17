@@ -12,7 +12,7 @@ public class ValidateCustomerCommand implements IValidateCustomerCommand{
     public ValidationResultModel validateCustomer(CustomerEntity customer) {
         var validationResultModel = new ValidationResultModel();
 
-        if (customer.getFullName().isEmpty()) {
+        if (customer.getFullName() == null || customer.getFullName().isEmpty()) {
             validationResultModel.addValidateMessage(
                     "fullName",
                     "Full name cannot be empty."
@@ -37,6 +37,13 @@ public class ValidateCustomerCommand implements IValidateCustomerCommand{
             validationResultModel.addValidateMessage(
                     "dob",
                     "Date of birth cannot be after today date."
+            );
+        }
+
+        if (customer.getUserId() == null || customer.getUserId().isEmpty()) {
+            validationResultModel.addValidateMessage(
+                    "userId",
+                    "User ID has to be passed."
             );
         }
 

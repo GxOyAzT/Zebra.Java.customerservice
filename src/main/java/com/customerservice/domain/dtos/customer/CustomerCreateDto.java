@@ -7,6 +7,7 @@ import java.sql.Date;
 public class CustomerCreateDto {
 
     //region PROPS
+    private String userId;
     private String fullName;
     private Date dob;
     private GenderEnum gender;
@@ -36,10 +37,20 @@ public class CustomerCreateDto {
     public void setGender(GenderEnum gender) {
         this.gender = gender;
     }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
     //endregion
 
     //region CONSTRUCTORS
-    public CustomerCreateDto(String fullName, Date dob, GenderEnum gender) {
+    public CustomerCreateDto(String userId,String fullName, Date dob, GenderEnum gender) {
+        this.userId = userId;
         this.fullName = fullName;
         this.dob = dob;
         this.gender = gender;

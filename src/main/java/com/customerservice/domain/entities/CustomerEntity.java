@@ -15,6 +15,11 @@ import java.util.List;
 )
 public class CustomerEntity extends EntityBase {
 
+    @Column(
+            name = "user_id"
+    )
+    private String userId;
+
     //region PROPS
     @Column(
             name = "full_name",
@@ -74,6 +79,14 @@ public class CustomerEntity extends EntityBase {
 
     public List<CouponEntity> getCoupons() {
         return coupons;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
     //endregion
 }
